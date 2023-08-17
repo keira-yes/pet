@@ -1,3 +1,3 @@
-import { HomePage } from './ui/HomePage';
+import { lazy } from 'react';
 
-export default HomePage;
+export const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ './ui/HomePage'));

@@ -1,11 +1,8 @@
-import { Suspense, lazy } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTheme } from './providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppRouter } from './providers/AppRouter';
 import './styles/index.scss';
-
-const AboutPage = lazy(() => import(/* webpackChunkName: "AboutPage" */ 'pages/AboutPage'));
-const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ 'pages/HomePage'));
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme();
@@ -17,12 +14,7 @@ export const App = () => {
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
             </nav>
-            <Suspense fallback={<span>Loading...</span>}>
-                <Routes>
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/" element={<HomePage />} />
-                </Routes>
-            </Suspense>
+            <AppRouter />
         </div>
     );
 };
