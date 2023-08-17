@@ -1,11 +1,11 @@
-import { Suspense, lazy, useContext } from 'react';
+import { Suspense, lazy } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/classNames';
+import { useTheme } from './providers/ThemeProvider';
+import { classNames } from 'shared/lib/classNames';
 import './styles/index.scss';
 
-const AboutPage = lazy(() => import(/* webpackChunkName: "AboutPage" */ './pages/AboutPage'));
-const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ './pages/HomePage'));
+const AboutPage = lazy(() => import(/* webpackChunkName: "AboutPage" */ 'pages/AboutPage'));
+const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ 'pages/HomePage'));
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme();
