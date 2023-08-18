@@ -1,6 +1,6 @@
 type Mods = Record<string, boolean | string>;
 
-export const classNames = (className: string, classes: string[], mods: Mods): string => {
+export const classNames = (className: string, classes: string[] = [], mods: Mods = {}): string => {
     return [
         className,
         ...classes,
