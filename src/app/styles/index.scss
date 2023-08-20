@@ -3,9 +3,69 @@
 @import 'themes/light.scss';
 @import 'themes/dark.scss';
 
+body {
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
 .app {
     min-height: 100vh;
     background-color: var(--bg-color);
     font: var(--font-m);
     color: var(--font-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @media screen and (max-width: 767px) {
+        padding: 0 16px;
+    }
 }

@@ -1,13 +1,65 @@
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-input,
-button,
-textarea,
-select {
+html {
+    font-size: 100%;
+}
+
+main,
+article,
+aside,
+details,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+picture {
+    display: block;
+}
+
+figure,
+blockquote {
     margin: 0;
-    font: inherit;
+}
+
+a[href*='mailto:'],
+a[href*='tel:'] {
+    word-wrap: break-word;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    outline: none;
+}
+
+input,
+textarea {
+    box-shadow: none;
+}
+
+input,
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
 }
