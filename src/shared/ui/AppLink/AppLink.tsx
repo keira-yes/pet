@@ -1,7 +1,7 @@
-import { LinkProps, NavLink } from 'react-router-dom';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 import classes from './AppLink.module.scss';
 
-export const AppLink: React.FC<LinkProps> = ({ to, children }) => {
+export const AppLink: React.FC<NavLinkProps> = ({ to, children }) => {
     return (
         <NavLink
             to={to}
