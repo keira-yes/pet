@@ -12,6 +12,10 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+main {
+    flex: 1;
+}
+
 img {
     display: inline-block;
     max-width: 100%;
@@ -61,11 +65,13 @@ h6 {
 
 .container {
     width: 100%;
-    max-width: 1270px;
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 var(--container-padding-l);
+}
 
-    @media screen and (max-width: 767px) {
-        padding: 0 16px;
-    }
+.page {
+    display: flex;
+    gap: var(--container-padding-l);
+    padding: 60px 0;
 }

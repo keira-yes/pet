@@ -6,10 +6,6 @@
 .container {
     display: flex;
     align-items: center;
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding-l);
 }
 
 .navigation {
