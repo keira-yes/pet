@@ -7,6 +7,7 @@ const HomePage: React.FC = () => {
         <>
             <h1>{t('Home Page')}</h1>
             <p>{t('Welcome')}</p>
+            <p>{t('Hello')}</p>
         </>
     );
 };

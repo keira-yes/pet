@@ -1,6 +1,7 @@
+import { Logo } from 'shared/ui/Logo/Logo';
 import { Navbar } from 'widgets/Navbar';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { Logo } from 'shared/ui/Logo/Logo';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
@@ -11,6 +12,7 @@ export const Header: React.FC = () => {
                 <div className={styles.navigation}>
                     <Navbar />
                     <ThemeSwitcher />
+                    <LangSwitcher />
                 </div>
             </div>
         </header>

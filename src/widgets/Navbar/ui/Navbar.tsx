@@ -1,11 +1,13 @@
+import { useTranslation } from 'react-i18next';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
+    const { t } = useTranslation();
     return (
         <nav className={styles.navbar}>
-            <AppLink to="/">Home</AppLink>
-            <AppLink to="/about">About</AppLink>
+            <AppLink to="/">{t('Home')}</AppLink>
+            <AppLink to="/about">{t('About')}</AppLink>
         </nav>
     );
 };
