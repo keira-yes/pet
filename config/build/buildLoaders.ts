@@ -1,32 +1,32 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env'],
-            },
-        },
-    };
+                presets: ['@babel/preset-env']
+            }
+        }
+    }
 
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
-    };
+        use: ['@svgr/webpack']
+    }
 
     const filesLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
             {
-                loader: 'file-loader',
-            },
-        ],
-    };
+                loader: 'file-loader'
+            }
+        ]
+    }
 
     const scssLoader = {
         test: /\.s[ac]ss$/i,
@@ -39,19 +39,19 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                         auto: true,
                         localIdentName: isDev
                             ? '[name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]',
-                    },
-                },
+                            : '[hash:base64:8]'
+                    }
+                }
             },
-            'sass-loader',
-        ],
-    };
+            'sass-loader'
+        ]
+    }
 
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+        exclude: /node_modules/
+    }
 
-    return [babelLoader, svgLoader, filesLoader, scssLoader, tsLoader];
+    return [babelLoader, svgLoader, filesLoader, scssLoader, tsLoader]
 }

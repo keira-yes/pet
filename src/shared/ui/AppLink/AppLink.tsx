@@ -1,8 +1,8 @@
-import { NavLink, NavLinkProps } from 'react-router-dom';
-import styles from './AppLink.module.scss';
+import { NavLink, type NavLinkProps } from 'react-router-dom'
+import styles from './AppLink.module.scss'
 
 interface AppLinkProps extends NavLinkProps {
-    to: string;
+    to: string
 }
 
 export const AppLink: React.FC<AppLinkProps> = ({ to, children, ...otherProps }) => {
@@ -13,5 +13,5 @@ export const AppLink: React.FC<AppLinkProps> = ({ to, children, ...otherProps })
             {...otherProps}>
             {children}
         </NavLink>
-    );
-};
+    )
+}
