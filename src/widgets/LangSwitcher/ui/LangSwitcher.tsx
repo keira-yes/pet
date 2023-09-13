@@ -1,11 +1,11 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 export const LangSwitcher: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation()
 
-    const translate = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'no' : 'en');
-    };
+    const translate = (): void => {
+        void i18n.changeLanguage(i18n.language === 'en' ? 'no' : 'en')
+    }
 
-    return <button onClick={translate}>{t('Language')}</button>;
-};
+    return <button onClick={translate}>{t('Language')}</button>
+}

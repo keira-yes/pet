@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 const HomePage: React.FC = () => {
-    const { t } = useTranslation('home');
+    const { t } = useTranslation('home')
 
     return (
         <>
@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
             <p>{t('Welcome')}</p>
             <p>{t('Hello')}</p>
         </>
-    );
-};
+    )
+}
 
-export default HomePage;
+export default HomePage

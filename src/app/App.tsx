@@ -1,20 +1,20 @@
-import { Suspense } from 'react';
-import { useTheme } from './providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppRouter } from './providers/AppRouter';
-import { Header } from 'widgets/Header';
-import { Sidebar } from 'widgets/Sidebar';
-import './styles/index.scss';
+import { Suspense, type FC } from 'react'
+import { useTheme } from './providers/ThemeProvider'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { AppRouter } from './providers/AppRouter'
+import { Header } from 'widgets/Header'
+import { Sidebar } from 'widgets/Sidebar'
+import './styles/index.scss'
 
-export const App = () => {
-    const { theme } = useTheme();
+export const App: FC = () => {
+    const { theme } = useTheme()
 
     return (
-        <Suspense fallback="">
+        <Suspense fallback=''>
             <div className={classNames('app', [theme])}>
                 <Header />
-                <div className="container">
-                    <div className="page">
+                <div className='container'>
+                    <div className='page'>
                         <Sidebar />
                         <main>
                             <AppRouter />
@@ -23,5 +23,5 @@ export const App = () => {
                 </div>
             </div>
         </Suspense>
-    );
-};
+    )
+}

@@ -1,5 +1,5 @@
 import { type FC, useMemo, useState } from 'react'
-import { Theme, ThemeContext, defaultTheme } from '../lib/ThemeContext'
+import { type Theme, ThemeContext, defaultTheme } from '../lib/ThemeContext'
 
 interface ThemeProviderProps {
     children: React.ReactNode

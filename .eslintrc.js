@@ -32,7 +32,6 @@ module.exports = {
         'comma-dangle': 'off',
         '@typescript-eslint/comma-dangle': 'error',
         '@typescript-eslint/consistent-type-imports': 'warn',
-        '@typescript-eslint/strict-boolean-expressions': 0,
-        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }]
+        '@typescript-eslint/strict-boolean-expressions': 0
     }
 }
