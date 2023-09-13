@@ -1,4 +1,9 @@
 module.exports = {
+    settings: {
+        react: {
+            version: 'detect'
+        }
+    },
     env: {
         browser: true,
         es2021: true
@@ -26,6 +31,8 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'comma-dangle': 'off',
         '@typescript-eslint/comma-dangle': 'error',
-        '@typescript-eslint/consistent-type-imports': 'warn'
+        '@typescript-eslint/consistent-type-imports': 'warn',
+        '@typescript-eslint/strict-boolean-expressions': 0,
+        '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }]
     }
 }

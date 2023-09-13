@@ -7,6 +7,8 @@ export enum Theme {
     DARK = 'dark'
 }
 
+export const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
+
 export interface ThemeContextProps {
     theme?: Theme
     setTheme?: (theme: Theme) => void
