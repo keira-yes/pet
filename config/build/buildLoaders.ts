@@ -14,9 +14,32 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
         }
     }
 
-    const svgLoader = {
+    const svgComponentLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack']
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'preset-default',
+                                params: {
+                                    overrides: {
+                                        removeViewBox: false
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+
+    const svgFileLoader = {
+        test: /\.svg$/,
+        use: 'file-loader'
     }
 
     const filesLoader = {
@@ -53,5 +76,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
         exclude: /node_modules/
     }
 
-    return [babelLoader, svgLoader, filesLoader, scssLoader, tsLoader]
+    return [babelLoader, svgComponentLoader, svgFileLoader, filesLoader, scssLoader, tsLoader]
 }

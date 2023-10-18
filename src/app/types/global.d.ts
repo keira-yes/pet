@@ -5,8 +5,9 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
-    const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>
-    export default ReactComponent
+    export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>
+    const src: string
+    export default src
 }
 
 declare const IS_DEV: boolean

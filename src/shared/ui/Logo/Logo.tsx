@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import LogoImg from 'shared/assets/img/logo.svg'
+import { ReactComponent as LogoImg } from 'shared/assets/img/logo.svg'
 import styles from './Logo.module.scss'
 
 export const Logo: React.FC = () => {
